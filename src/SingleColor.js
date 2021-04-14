@@ -7,6 +7,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
   const hex = rgbToHex(...rgb);
   const hexValue = `#${hexColor}`;
 
+  //useEffect use to clear the alert after 3 second
   useEffect(() => {
     let timeout = setTimeout(() => {
       setAlert(false);
@@ -14,6 +15,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
     return () => clearTimeout(timeout); //cleanup function
   }, [alert]);
 
+  //index param use from text color styling
   return (
     <article
       className={`color ${index > 4 && "color-light"}`}
